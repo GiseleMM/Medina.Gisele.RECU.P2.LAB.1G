@@ -1,0 +1,63 @@
+# depslib dependency file v1.0
+1638467927 source:c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1637964931 c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\linkedlist.h
+
+1638232075 source:c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\mibibliotecha.c
+	"MiBibliotecha.h"
+
+1638232075 c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\mibibliotecha.h
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+
+1638457653 source:c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\menus.c
+	"menus.h"
+
+1638457750 c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\menus.h
+	<stdio.h>
+	<stdlib.h>
+
+1638486913 source:c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\main.c
+	<stdio.h>
+	<stdlib.h>
+	"MiBibliotecha.h"
+	"LinkedList.h"
+	<time.h>
+	"menus.h"
+	"post.h"
+	"controller.h"
+
+1638486913 c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\post.h
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"post.h"
+	<string.h>
+
+1638484828 source:c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\parser.c
+	"parser.h"
+
+1638484507 c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\parser.h
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"post.h"
+
+1638486913 source:c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\post.c
+	"post.h"
+
+1638487212 source:c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\controller.c
+	"controller.h"
+
+1638486977 c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\controller.h
+	"LinkedList.h"
+	"post.h"
+	<stdio.h>
+	<stdlib.h>
+	"parser.h"
+
