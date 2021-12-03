@@ -52,6 +52,11 @@ ePost* post_newParametros(char* strid, char* struser, char* strlikes,char* strde
             strcpy(nuevopost->user,struser);
             strcpy(nuevopost->likes,strlikes);
             nuevopost->followers=atof(strfollowers);*/
+            printf("%d",post_setid(nuevopost,atoi(strid)));
+                    printf("%d",post_setuser(nuevopost,struser));
+                    printf("%d",post_setlikes(nuevopost,atoi(strlikes)));
+                    printf("%d",post_setdeslikes(nuevopost,atoi(strdeslikes)));
+                    printf("%d",post_setfollowers(nuevopost,atof(strfollowers)));
             if(!(post_setid(nuevopost,atoi(strid))&&
                     post_setuser(nuevopost,struser)&&
                     post_setlikes(nuevopost,atoi(strlikes))&&
@@ -60,6 +65,8 @@ ePost* post_newParametros(char* strid, char* struser, char* strlikes,char* strde
             {
                 free(nuevopost);/*si algun parametro no es valido libero memeoria y hago q el puntero apunte a NULL */
                 nuevopost=NULL;
+                printf("ingrese a set invalido\n");
+                //system("pause");
             }
         }
     }
@@ -79,6 +86,7 @@ ePost* post_newParam(int id, char* user, int likes, int deslikes, float follower
             strcpy(nuevopost->user,struser);
             strcpy(nuevopost->likes,strlikes);
             nuevopost->followers=atof(strfollowers);*/
+
             if(!((post_setid(nuevopost,id))&&
                     post_setuser(nuevopost,user)&&
                     post_setlikes(nuevopost,likes)&&
@@ -97,7 +105,7 @@ ePost* post_newParam(int id, char* user, int likes, int deslikes, float follower
 int post_setid(ePost* post, int id)
 {
     int todoOk=0;
-    if(post!=NULL && id>=0)
+    if(post!=NULL)
     {
         post->id=id;
         todoOk=1;
@@ -119,7 +127,7 @@ int post_setuser(ePost* post, char* user)
 int post_setlikes(ePost* post, int likes)
 {
     int todoOk=0;
-    if(post!=NULL && likes>=0)
+    if(post!=NULL)
     {
         todoOk=1;
         post->likes= likes;
@@ -131,16 +139,17 @@ int post_setlikes(ePost* post, int likes)
 int post_setdeslikes(ePost* post, int deslikes)
 {
     int todoOk=0;
-    if(post!=NULL && deslikes>=0)
+    if(post!=NULL )
     {
         post->deslikes=deslikes;
+        todoOk=1;
     }
     return todoOk;
 }
 int post_setfollowers(ePost* post, float followers)
 {
     int todoOk=0;
-    if(post!=NULL && followers>=0)
+    if(post!=NULL )
     {
         todoOk=1;
         post->followers=followers;

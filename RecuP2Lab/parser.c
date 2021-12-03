@@ -19,19 +19,22 @@ int parser_postFromText(FILE* pFile, LinkedList* pArrayListpost)
         fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^\n]\n",buffer[0],buffer[1],buffer[2],buffer[3],buffer[4]);
         do
         {
-
+            //printf("INgrese a parser");
+            //system("pause");
             cant=fscanf(pFile,"%[^,],%[^,],%[^,],%[^,],%[^\n]\n",buffer[0],buffer[1],buffer[2],buffer[3],buffer[4]);
             if(cant<4)
             {
                 break;
             }
-            printf("%s- %s- %s- %s %s \n", buffer[0],buffer[1],buffer[2],buffer[3],buffer[4]);
+            //system("pause");
+            printf("%s- %s- %s- %s -%s \n", buffer[0],buffer[1],buffer[2],buffer[3],buffer[4]);
             //CREO post
             auxpost=post_newParametros(buffer[0],buffer[1],buffer[2],buffer[3],buffer[4]);
             if(auxpost!=NULL)
             {
                 post_mostrar(auxpost);
-                ll_add(pArrayListpost,auxpost);
+                //system("pause");
+                printf("add %d",ll_add(pArrayListpost,auxpost));
                 todoOk=1;
                 auxpost=NULL;
             }

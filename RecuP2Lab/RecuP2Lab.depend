@@ -15,14 +15,14 @@
 	<string.h>
 	<ctype.h>
 
-1638457653 source:c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\menus.c
+1638488657 source:c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\menus.c
 	"menus.h"
 
 1638457750 c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\menus.h
 	<stdio.h>
 	<stdlib.h>
 
-1638486913 source:c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\main.c
+1638487249 source:c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\main.c
 	<stdio.h>
 	<stdlib.h>
 	"MiBibliotecha.h"
@@ -39,7 +39,7 @@
 	"post.h"
 	<string.h>
 
-1638484828 source:c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\parser.c
+1638494155 source:c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\parser.c
 	"parser.h"
 
 1638484507 c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\parser.h
@@ -48,7 +48,7 @@
 	"LinkedList.h"
 	"post.h"
 
-1638486913 source:c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\post.c
+1638494294 source:c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\post.c
 	"post.h"
 
 1638487212 source:c:\users\1\downloads\utn\laboratorio-programacion\gmm\recup2lab\controller.c
