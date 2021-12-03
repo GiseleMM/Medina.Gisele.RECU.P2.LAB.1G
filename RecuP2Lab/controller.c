@@ -112,3 +112,36 @@ int controller_asignarEstadistica(LinkedList* lista)
     }
     return todoOk;
 }
+int controller_filtrarMejorPost(LinkedList* lista)
+{
+    int todoOk=0;
+    char path[50];
+    LinkedList* mejores=NULL;
+    if(lista!=NULL)
+    {
+        mejores=ll_filter(lista,filtrarMejoresPosteos);
+        if(mejores!=NULL)
+        {
+            if(ll_isEmpty(mejores))
+            {
+                printf("no hay elementos en la lista para guardar\n");
+
+            }
+            else
+            {
+                controller_listar(mejores);
+                fflush(stdin);
+                printf("ingrese path para guardar Mejores posteo   ");
+                gets(path);
+                if(controller_saveAsText(path,mejores))
+                {
+                    printf("se guardo con exito, archivo generado\n");
+
+                    todoOk=1;
+                }
+            }
+
+        }
+    }
+    return todoOk;
+}

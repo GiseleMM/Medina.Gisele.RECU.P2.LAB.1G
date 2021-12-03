@@ -289,3 +289,16 @@ void* asignarFollowers(void* followers)
     }
     return (ePost*)followers;
 }
+int filtrarMejoresPosteos(void* posteo)
+{
+    int esMejor=0;
+    if(posteo!=NULL)
+    {
+        if(((ePost*)posteo)->likes >3000)
+        {
+            esMejor=1;
+        }
+    }
+
+    return esMejor;
+}

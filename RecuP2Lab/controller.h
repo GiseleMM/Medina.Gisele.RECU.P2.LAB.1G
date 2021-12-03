@@ -10,5 +10,5 @@ int controller_listar(LinkedList* lista);
 int controller_saveAsText(char* path, LinkedList* pArrayListposts);
 int controller_loadFromText(char* path,LinkedList* pArrayListposts);
 int controller_asignarEstadistica(LinkedList* lista);
-
+int controller_filtrarMejorPost(LinkedList* lista);
 #endif // CONTROLLER_H_INCLUDED

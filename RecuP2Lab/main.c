@@ -12,7 +12,7 @@ int main()
 {
     ///https://github.com/GiseleMM/Medina.Gisele.RECU.P2.LAB.1G.git
 
-    //srand(time(NULL));
+    srand(time(NULL));
 
     /* https://github.com/GiseleMM/Medina.Gisele.P2.Lab1G.git
      printf("Hello world!\n");
@@ -89,7 +89,15 @@ int main()
             break;
 
         case 4:
-            printf("ingrese al case 4\n");
+            if(!ll_isEmpty(lista))
+            {
+                    if(controller_filtrarMejorPost(lista))
+                    {
+                        printf("filtrado exitoso\n");
+                    }
+            }
+
+
             break;
 
 
