@@ -96,26 +96,61 @@ int main()
                         printf("filtrado exitoso\n");
                     }
             }
+            else
+            {
+                printf("lista vacia\n");
+            }
 
 
             break;
 
 
         case 5:
-            printf("ingrese al case 5\n");
+            if(!ll_isEmpty(lista))
+            {
+                    if(controller_filtrarHeaters(lista))
+                    {
+                        printf("filtrado exitoso\n");
+                    }
+            }
+            else
+            {
+                printf("lista vacia\n");
+            }
+
             break;
 
 
         case 6:
-            printf("ingrese al case 6\n");
-            break;
+            if(!ll_isEmpty(lista))
+            {
+                    if(controller_ordenar(lista))
+                    {
+                        printf("ordenamiento exitoso\n");
+                    }
+            }
+            else
+            {
+                printf("lista vacia\n");
+            }
 
+            break;
 
         case 7:
-            printf("ingrese al case 2\n");
+            if(!ll_isEmpty(lista))
+            {
+                    if(controller_mayorFollowers(lista))
+                    {
+                        printf(" mas popular exitoso\n");
+                    }
+            }
+            else
+            {
+                printf("lista vacia\n");
+            }
             break;
         case 8:
-            printf("ingrese al case SALIR confirma? si o no \n");
+            printf("ingrese aSALIR confirma? si o no \n");
             fflush(stdin);
             gets(confirma);
             if(stricmp(confirma,"si")==0)

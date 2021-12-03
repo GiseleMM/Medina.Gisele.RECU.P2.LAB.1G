@@ -5,7 +5,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "parser.h"
-
+int controller_mayorFollowers(LinkedList* lista);
+int controller_ordenar(LinkedList* lista);
+int controller_filtrarHeaters(LinkedList* lista);
 int controller_listar(LinkedList* lista);
 int controller_saveAsText(char* path, LinkedList* pArrayListposts);
 int controller_loadFromText(char* path,LinkedList* pArrayListposts);

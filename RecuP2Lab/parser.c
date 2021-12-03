@@ -34,7 +34,7 @@ int parser_postFromText(FILE* pFile, LinkedList* pArrayListpost)
             {
                 post_mostrar(auxpost);
                 //system("pause");
-                printf("add %d",ll_add(pArrayListpost,auxpost));
+                //printf("add %d",ll_add(pArrayListpost,auxpost));
                 todoOk=1;
                 auxpost=NULL;
             }

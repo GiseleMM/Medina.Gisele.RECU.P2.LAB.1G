@@ -16,9 +16,12 @@ typedef struct
     float followers;
 
 } ePost;
+
+//////ORDENAR
+int ordenarPorFollowers(void* follower1, void* follower2);
 //FILTRAR
 int filtrarMejoresPosteos(void* posteo);
-
+int filtrarHeaters(void* posteo);
 //MAP
 void* asignarDeslikes(void* deslikes);
 void* asignarLikes(void* likes);

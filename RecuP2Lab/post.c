@@ -17,7 +17,7 @@ int post_mostrarposts(ePost* lista, int tam)
     int todoOk=0;
     if(lista!=NULL && tam>0)
     {
-        printf("id    user            likes     deslikes             followers\n");
+        printf("id    user                      likes  deslikes       followers\n");
         for(int i=0; i<tam; i++)
         {
             post_mostrar((lista+i));
@@ -52,11 +52,11 @@ ePost* post_newParametros(char* strid, char* struser, char* strlikes,char* strde
             strcpy(nuevopost->user,struser);
             strcpy(nuevopost->likes,strlikes);
             nuevopost->followers=atof(strfollowers);*/
-            printf("%d",post_setid(nuevopost,atoi(strid)));
-                    printf("%d",post_setuser(nuevopost,struser));
-                    printf("%d",post_setlikes(nuevopost,atoi(strlikes)));
-                    printf("%d",post_setdeslikes(nuevopost,atoi(strdeslikes)));
-                    printf("%d",post_setfollowers(nuevopost,atof(strfollowers)));
+            //printf("%d",post_setid(nuevopost,atoi(strid)));
+              //      printf("%d",post_setuser(nuevopost,struser));
+                //    printf("%d",post_setlikes(nuevopost,atoi(strlikes)));
+                  //  printf("%d",post_setdeslikes(nuevopost,atoi(strdeslikes)));
+                    //printf("%d",post_setfollowers(nuevopost,atof(strfollowers)));
             if(!(post_setid(nuevopost,atoi(strid))&&
                     post_setuser(nuevopost,struser)&&
                     post_setlikes(nuevopost,atoi(strlikes))&&
@@ -65,7 +65,7 @@ ePost* post_newParametros(char* strid, char* struser, char* strlikes,char* strde
             {
                 free(nuevopost);/*si algun parametro no es valido libero memeoria y hago q el puntero apunte a NULL */
                 nuevopost=NULL;
-                printf("ingrese a set invalido\n");
+                //printf("ingrese a set invalido\n");
                 //system("pause");
             }
         }
@@ -233,7 +233,7 @@ int post_mostrarLista(LinkedList* pArrayListposts)
         tam=ll_len(pArrayListposts);
         if(tam>0)
         {
-
+            printf("id      user        likes   deslikes    followers\n");
 
             for(int i=0; i<tam; i++)
             {
@@ -278,8 +278,8 @@ void* asignarDeslikes(void* deslikes)
 }
 void* asignarFollowers(void* followers)
 {
-    int min=3000;
-    int max=3500;
+    int min=10000;
+    int max=20000;
     float followersAux;
 
     if(followers!=NULL)
@@ -301,4 +301,34 @@ int filtrarMejoresPosteos(void* posteo)
     }
 
     return esMejor;
+}
+int filtrarHeaters(void* posteo)
+{
+    int esHeaters=0;
+    if(posteo!=NULL)
+    {
+        if(((ePost*)posteo)->likes < ((ePost*)posteo)->deslikes)
+        {
+            esHeaters=1;
+        }
+    }
+
+    return esHeaters;
+}
+//////ORDENAR
+int ordenarPorFollowers(void* follower1, void* follower2)
+{
+    int comparacion=0;
+    if(follower1!=NULL && follower2!=NULL)
+    {
+        if(((ePost*)follower1)->followers >  ((ePost*)follower2)->followers)
+        {
+         comparacion=1;
+        }
+        if(((ePost*)follower1)->followers <  ((ePost*)follower2)->followers)
+        {
+         comparacion=-1;
+        }
+    }
+    return comparacion;
 }
