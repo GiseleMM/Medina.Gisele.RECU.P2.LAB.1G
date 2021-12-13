@@ -7,5 +7,5 @@
 #include "post.h"
 
 int parser_postFromText(FILE* pFile,LinkedList* pArrayListpost);
-
+int parser_postFromBinary(FILE* pFile, LinkedList* lista);
 #endif // PARSER_H_INCLUDED

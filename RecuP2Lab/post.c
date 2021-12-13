@@ -5,7 +5,7 @@ void post_mostrar(ePost* unpost)
 {
     if(unpost!=NULL)
     {
-        printf(" %6d - %-20s - %6d  %6d - %6.1f\n",unpost->id,
+        printf(" %6d - %-20s - %6d  %6d - %6d\n",unpost->id,
                unpost->user,
                unpost->likes,
                unpost->deslikes,
@@ -35,7 +35,7 @@ ePost* post_new()
         strcpy(nuevopost->user," ");
         nuevopost->likes=0;
         nuevopost->deslikes=0;
-        nuevopost->followers=0.0;
+        nuevopost->followers=0;
     }
     return nuevopost;
 }
@@ -61,7 +61,7 @@ ePost* post_newParametros(char* strid, char* struser, char* strlikes,char* strde
                     post_setuser(nuevopost,struser)&&
                     post_setlikes(nuevopost,atoi(strlikes))&&
                     post_setdeslikes(nuevopost,atoi(strdeslikes))&&
-                    post_setfollowers(nuevopost,atof(strfollowers))))
+                    post_setfollowers(nuevopost,atoi(strfollowers))))
             {
                 free(nuevopost);/*si algun parametro no es valido libero memeoria y hago q el puntero apunte a NULL */
                 nuevopost=NULL;
@@ -73,7 +73,7 @@ ePost* post_newParametros(char* strid, char* struser, char* strlikes,char* strde
 
     return nuevopost;
 }
-ePost* post_newParam(int id, char* user, int likes, int deslikes, float followers)
+ePost* post_newParam(int id, char* user, int likes, int deslikes, int followers)
 {
    ePost* nuevopost=NULL;
     if(user!=NULL)
@@ -146,7 +146,7 @@ int post_setdeslikes(ePost* post, int deslikes)
     }
     return todoOk;
 }
-int post_setfollowers(ePost* post, float followers)
+int post_setfollowers(ePost* post, int followers)
 {
     int todoOk=0;
     if(post!=NULL )
@@ -204,7 +204,7 @@ int post_getdeslikes(ePost* post, int* deslikes)
 
     return todoOk;
 }
-int post_getfollowers(ePost* post, float* followers)
+int post_getfollowers(ePost* post, int* followers)
 {
     int todoOk=0;
     if(post!=NULL && followers!=NULL)
@@ -280,7 +280,7 @@ void* asignarFollowers(void* followers)
 {
     int min=10000;
     int max=20000;
-    float followersAux;
+    int followersAux;
 
     if(followers!=NULL)
     {

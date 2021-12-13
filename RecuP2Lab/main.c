@@ -14,8 +14,7 @@ int main()
 
     srand(time(NULL));
 
-    /* https://github.com/GiseleMM/Medina.Gisele.P2.Lab1G.git
-     printf("Hello world!\n");
+     /*printf("Hello world!\n");
      srand(time(NULL));
      float numero;
      int max=100;
@@ -26,6 +25,8 @@ int main()
      printf("%f\n",numero);
      numero=(float)(rand()% (max - min +1)+min)/10;//3 decimales divido por 100
      printf("%f\n",numero);*/
+
+
 
     LinkedList*  lista=ll_newLinkedList();
     if(lista==NULL)
@@ -43,7 +44,7 @@ int main()
         switch(menu())
         {
         case 1:
-            printf("ingrese al case 1\n");
+           // printf("ingrese al case 1\n");
             if(ll_isEmpty(lista) || seCargo==0)
             {
                 fflush(stdin);
@@ -64,7 +65,7 @@ int main()
             break;
 
         case 2:
-            printf("ingrese al case 2\n");
+            //printf("ingrese al case 2\n");
             if(!ll_isEmpty(lista))/*no esta vacia*/
             {
                 controller_listar(lista);
@@ -76,7 +77,7 @@ int main()
             break;
 
         case 3:
-            printf("ingrese al case 3\n");
+           // printf("ingrese al case 3\n");
             if(!ll_isEmpty(lista))
             {
                 controller_asignarEstadistica(lista);
@@ -150,7 +151,67 @@ int main()
             }
             break;
         case 8:
-            printf("ingrese aSALIR confirma? si o no \n");
+            if(!ll_isEmpty(lista))
+            {
+                fflush(stdin);
+                printf("ingrese path ");
+                gets(confirma);
+                if(controller_saveAsBinary(path,lista))
+                {
+                    printf("lista guardada en archivo : %s ",path);
+                }
+                else
+                {
+                    printf("no se pudo guardar lista\n");
+                }
+            }
+            else
+            {
+                printf("lista vacia\n");
+            }
+
+            break;
+        case 9:
+            if(!ll_isEmpty(lista))
+            {
+                fflush(stdin);
+                printf("lista ya cargada desea limpiar lista y cargar otro archivo\n");
+                gets(confirma);
+                if(stricmp(confirma,"si")==0)
+                {
+                    if(ll_clear(lista)==0)
+                    {
+                        fflush(stdin);
+                        printf("ingrese path ");
+                        gets(path);
+                        if(controller_loadFromBinary(path,lista))
+                        {
+                            printf("carga exitosa de archivo en lista ");
+                            controller_listar(lista);
+                        }
+                    }
+
+
+                }
+            }
+            else
+            {
+                fflush(stdin);
+                printf("ingrese path : ");
+                gets(path);
+                if(controller_loadFromBinary(path,lista))
+                {
+                    printf("carga exitosa de archivo a lista");
+                    controller_listar(lista);
+
+                }
+            }
+
+            break;
+
+
+        case 10:
+            printf("ingrese a SALIR confirma? si o no \n");
             fflush(stdin);
             gets(confirma);
             if(stricmp(confirma,"si")==0)
@@ -179,6 +240,7 @@ int main()
                 seguir=10;
             }
             break;*/
+
         default:
             printf("opcion no valida Reingrese opcion\n");
             break;

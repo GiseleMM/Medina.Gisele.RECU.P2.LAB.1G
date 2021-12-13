@@ -32,9 +32,10 @@ int parser_postFromText(FILE* pFile, LinkedList* pArrayListpost)
             auxpost=post_newParametros(buffer[0],buffer[1],buffer[2],buffer[3],buffer[4]);
             if(auxpost!=NULL)
             {
-                post_mostrar(auxpost);
+                //post_mostrar(auxpost);
                 //system("pause");
-                //printf("add %d",ll_add(pArrayListpost,auxpost));
+                //printf(">>>>add %d\n",ll_add(pArrayListpost,auxpost));
+                ll_add(pArrayListpost,auxpost);
                 todoOk=1;
                 auxpost=NULL;
             }
@@ -44,4 +45,34 @@ int parser_postFromText(FILE* pFile, LinkedList* pArrayListpost)
 
     }
     return todoOk;
+}
+int parser_postFromBinary(FILE* pFile, LinkedList* lista)
+{
+    int todoOk=0;
+    ePost* aux=NULL;
+    int cant;
+
+    if(pFile!=NULL && lista!=NULL)
+    {
+        do{
+                aux=post_new();
+                if(aux!=NULL)
+                {
+                    cant=fread(aux,sizeof(ePost),1,pFile);
+                    printf("cant %d \n",cant);
+                    if(cant==1)
+                    {
+                        post_mostrar(aux);
+                        ll_add(lista,aux);
+                        printf("elemento agregado en el indice %d\n ",ll_indexOf(lista,aux));
+                        todoOk=1;
+                        aux=NULL;
+                    }
+
+                }
+
+        }while(!feof(pFile));
+    }
+    return todoOk;
+
 }
